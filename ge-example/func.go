@@ -29,6 +29,7 @@ func main() {
 	sum(nums...)
 
 	//匿名函数
+	//函数变量带有状态
 	nextInt := intSeq()
 	fmt.Println(nextInt())
 	fmt.Println(nextInt())
@@ -36,4 +37,8 @@ func main() {
 
 	newInts := intSeq()
 	fmt.Println(newInts())
+
+	func() {
+		fmt.Println("hello world")
+	}()
 }
