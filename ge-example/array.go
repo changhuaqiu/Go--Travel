@@ -18,4 +18,5 @@ func main() {
 		}
 	}
 	fmt.Println("2d:", towD)
+	fmt.Println(len(b))
 }

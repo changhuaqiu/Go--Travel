@@ -21,6 +21,10 @@ func intSeq() func() int {
 		return i
 	}
 }
+
+func GET(i func(p string, q string) string) {
+	fmt.Println(i("GET", "for"))
+}
 func main() {
 	sum(1, 2)
 	sum(1, 2, 3, 4)
@@ -37,8 +41,15 @@ func main() {
 
 	newInts := intSeq()
 	fmt.Println(newInts())
-
-	func() {
+	//	普通类型
+	var f = func() {
 		fmt.Println("hello world")
-	}()
+	}
+	f()
+	//匿名函数作为参数
+	var f1 = func(p string, q string) string {
+		return p + q + "ret"
+	}
+	GET(f1)
+
 }

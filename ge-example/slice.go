@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	s := make([]string, 3)
@@ -32,4 +34,9 @@ func main() {
 
 	//防止切片陷阱 使用copy
 	//切片返回的是同一片内存区域
+
+	sa := "h a d"
+	p := []byte(sa)
+
+	fmt.Println(p)
 }
