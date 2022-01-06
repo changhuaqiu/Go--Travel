@@ -23,18 +23,35 @@ func add(t *tree, value int) *tree {
 	}
 	return t
 }
+
+//中序遍历
 func (t *tree) String() string {
 	var s string
 	if t == nil {
 		return s
 	}
+
 	s += t.left.String()
+
 	s += strconv.Itoa(t.value)
+
+	s += t.right.String()
+	return s
+}
+
+//前序遍历
+func (t *tree) String1() string {
+	var s string
+	if t == nil {
+		return s
+	}
+	s += strconv.Itoa(t.value)
+	s += t.left.String()
 	s += t.right.String()
 	return s
 }
 func main() {
-	root := &tree{0, nil, nil}
-	add(root, 2)
+	root := &tree{2, nil, nil}
+	add(root, 1)
 	fmt.Println(root.String())
 }
